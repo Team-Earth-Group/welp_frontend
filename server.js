@@ -14,13 +14,13 @@ app.get('/', (req, res) => {
 app.get('/main.js', async (req, res) => {
   const filepath = path.join(__dirname, 'main.js')
 
-  if (process.env.NODE_ENV === 'production') {
-    await replaceInFile({
-      files: filepath,
-      from: 'http://localhost:3001',
-      to: 'https://appointment-backend2.herokuapp.com'
-    })
-  }
+  // if (process.env.NODE_ENV === 'production') {
+  //   await replaceInFile({
+  //     files: filepath,
+  //     from: 'http://localhost:3001',
+  //     to: 'https://appointment-backend2.herokuapp.com'
+  //   })
+  // }
   res.sendFile(filepath) 
 })
 
