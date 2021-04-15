@@ -5,7 +5,7 @@ const routesReport = require('rowdy-logger').begin(app)
 const path = require('path')
 const replaceInFile = require('replace-in-file')
 
-const rootDir = path.join(__dirname, '/');
+const rootDir = path.join(__dirname, '/')
 app.use(express.static(rootDir))
 
 app.get('/', (req, res) => {
@@ -20,7 +20,7 @@ app.get('/main.js', async (req, res) => {
   //   await replaceInFile({
   //     files: filepath,
   //     from: 'http://localhost:3001',
-  //     to: 'https://appointment-backend2.herokuapp.com'
+  //     to: ''
   //   })
   // }
   res.sendFile(filepath)
