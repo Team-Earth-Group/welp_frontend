@@ -38,44 +38,94 @@
               <!-- made change here -->
             </a>
           </div>
-          <div class = "signupScreen">
-            <form class ="signupForm">
-              <label for = 'signupName'>Name</label>
-              <input type = "text" name="name" id="signupName">
+          <div class="signupScreen hidden">
+            <form class="signupForm" autocomplete="off">
+              <div class="signupNameInput">
+                <input
+                  type="text"
+                  name="name"
+                  class="signupName"
+                  id="signupName"
+                  placeholder="Name"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="signupEmailInput">
+                <input
+                  type="email"
+                  name="email"
+                  class="signupEmail"
+                  id="signupEmail"
+                  placeholder="Email"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="signupPasswordInput">
+                <input
+                  type="password"
+                  name="password"
+                  class="signupPassword"
+                  id="signupPassword"
+                  placeholder="Password"
+                  autocomplete="off"
+                />
+              </div>
 
-              <label for = 'signupEmail'>Email</label>
-              <input type = "email" name="email" id="signupEmail">
-
-              <label for = 'signupPassword'>Password</label>
-              <input type = "password" name="password" id="signupPassword">
-
-              <input type="submit" value="SIGN UP">
-
-
+              <button class="signupFormButton" value="SIGN UP" type="submit">
+                <span>
+                  <a>Sign Up</a>
+                </span>
+              </button>
+              <!-- <input type="submit" value="SIGN UP" /> -->
             </form>
           </div>
 
-          <div class = "loginScreen">
-            <form class="loginForm">
-              <label for = 'loginEmail'>Email</label>
-              <input type = "email" name="email" id="loginEmail">
-
-              <label for = 'loginPassword'>Password</label>
-              <input type = "password" name="password" id="loginPassword">
-
-              <input type="submit" value="LOGIN">
+          <div class="loginScreen hidden">
+            <form class="loginForm" autocomplete="off">
+              <div class="loginEmailInput">
+                <input
+                  type="email"
+                  name="email"
+                  class="loginEmail"
+                  id="loginEmail"
+                  placeholder="Email"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="loginPasswordInput">
+                <input
+                  type="password"
+                  name="password"
+                  class="loginPassword"
+                  id="loginPassword"
+                  placeholder="Password"
+                  autocomplete="off"
+                />
+              </div>
+              <button class="loginFormButton" value="LOGIN" type="submit">
+                <span>
+                  <a>Login</a>
+                </span>
+              </button>
             </form>
           </div>
 
-
-          <div class="searchBar">
+          <div class="searchBar hidden">
             <div class="searchBarContainer">
-              <form class="searchBarForm">
+              <form class="searchBarForm" autocomplete="off">
                 <div class="leftSearchBar">
-                  <input class="keyword" placeholder="Keyword" />
+                  <input
+                    class="keyword"
+                    placeholder="Keyword"
+                    autocomplete="off"
+                  />
                 </div>
                 <div class="rightSearchBar">
-                  <input class="location" placeholder="Location" />
+                  <input
+                    class="location"
+                    placeholder="Location"
+                    autocomplete="off"
+                  />
                 </div>
                 <button class="searchButton">
                   <img src="./assets/magnifying-glass.png" />
@@ -83,7 +133,7 @@
               </form>
             </div>
           </div>
-          <div class = "searchResult"></div>
+          <div class="searchResult"></div>
         </div>
       </div>
     </div>
