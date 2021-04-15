@@ -62,7 +62,7 @@ html {
 .loginButton:hover,
 .signupButton:hover {
   color: white;
-  background-color: #cabc35;
+  background-color: #f7e000;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
   transform: scale(1.1);
@@ -164,7 +164,7 @@ html {
 }
 
 .searchButton:hover {
-  background-color: #cabc35;
+  background-color: #f7e000;
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -174,15 +174,109 @@ html {
 }
 
 .signupScreen,
-.signupForm {
+.signupForm,
+.loginScreen,
+.loginForm {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.signupScreen {
+.signupScreen,
+.loginScreen {
   background-color: #ffeb2b;
-  border-radius: 15px;
+  margin-top: 50px;
+  border: solid black 2px;
+  border-radius: 5px;
   padding: 20px;
-  width: 500px;
+  width: 350px;
+  margin-bottom: 100px;
+  align-items: center;
+  box-shadow: 0px 3px 1px -2px rgb(7 232 238 / 20%),
+    0px 2px 2px 0px rgb(7 232 238 / 14%), 0px 1px 5px 0px rgb(7 232 238 / 12%);
+}
+
+.signupForm,
+.loginForm {
+  flex-direction: column;
+  width: 100%;
+}
+
+.signupNameInput,
+.signupEmailInput,
+.signupPasswordInput,
+.loginEmailInput,
+.loginPasswordInput {
+  padding: 10px;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: text;
+  display: inline-flex;
+  font-weight: 400;
+  line-height: 1.1876em;
+  letter-spacing: 0.00938em;
+  font-size: 1rem;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.signupName,
+.signupEmail,
+.signupPassword,
+.loginEmail,
+.loginPassword {
+  /* color: white; */
+  width: 100%;
+  /* border: 1px; */
+  border-radius: 4px;
+  height: 1.1876em;
+  margin: 0;
+  display: block;
+  padding: 6px 0 7px;
+  min-width: 0;
+  background: white;
+  box-sizing: content-box;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: inherit;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0px 3px 1px -2px rgb(7 232 238 / 20%),
+    0px 2px 2px 0px rgb(7 232 238 / 14%), 0px 1px 5px 0px rgb(7 232 238 / 12%);
+}
+
+.signupFormButton,
+.loginFormButton {
+  padding: 6px 16px;
+  font-size: 17px;
+  font-family: "Wendy One", sans-serif;
+  min-width: 70px;
+  box-sizing: border-box;
+  font-weight: 500;
+  line-height: 2.5;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #2bff81;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+  box-shadow: 0px 3px 1px -2px rgb(7 232 238 / 20%),
+    0px 2px 2px 0px rgb(7 232 238 / 14%), 0px 1px 5px 0px rgb(7 232 238 / 12%);
+}
+
+.signupFormButton:hover,
+.loginFormButton:hover {
+  color: white;
+  background-color: #00f764;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+  transform: scale(1.1);
+}
+
+.signupFormButton:active,
+.loginFormButton:active {
+  transform: scale(1);
+}
+
+.hidden {
+  display: none;
 }
