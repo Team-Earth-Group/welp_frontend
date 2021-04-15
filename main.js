@@ -14,3 +14,23 @@ const signupScreen = document.querySelector('.signupScreen')
 const loginScreen = document.querySelector('.lognScreen')
 
 
+const hideElements = (...elements) => {
+    for (let element of elements) {
+        element.classList.add('hide');
+    }
+}
+
+const showElements = (...elements) => {
+    for (let element of elements) {
+        element.classList.remove('hide');
+    }
+}
+
+searchBarForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    console.log(event.target)
+})
+
+
+
+
