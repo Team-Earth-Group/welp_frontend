@@ -2,9 +2,11 @@ const express = require('express')
 const app = express()
 
 const routesReport = require('rowdy-logger').begin(app)
-
 const path = require('path')
 const replaceInFile = require('replace-in-file')
+
+const rootDir = path.join(__dirname, '/');
+app.use(express.static(rootDir))
 
 app.get('/', (req, res) => {
   const filepath = path.join(__dirname, 'index.html')
@@ -21,7 +23,7 @@ app.get('/main.js', async (req, res) => {
   //     to: 'https://appointment-backend2.herokuapp.com'
   //   })
   // }
-  res.sendFile(filepath) 
+  res.sendFile(filepath)
 })
 
 
@@ -29,8 +31,8 @@ app.get('/style.css', (req, res) => {
   const filepath = path.join(__dirname, 'style.css')
   res.type('css').sendFile(filepath)
 })
-  
+
 const port = process.env.PORT || 3000
 app.listen(port, () => {
-    routesReport.print()
+  routesReport.print()
 })
