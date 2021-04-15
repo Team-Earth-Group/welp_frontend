@@ -172,3 +172,17 @@ html {
 .searchButton:active {
   transform: scale(1);
 }
+
+.signupFormContainer,
+.signupForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupFormContainer {
+  background-color: #ffeb2b;
+  border-radius: 15px;
+  padding: 20px;
+  width: 500px;
+}
