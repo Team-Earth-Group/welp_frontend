@@ -3,7 +3,8 @@
     "express": "^4.17.1",
     "path": "^0.12.7",
     "pg": "^8.6.0",
-    "replace-in-file": "^3.4.4",
+    "replace-in-file": "^6.2.0",
+    "replace-in-files": "^3.0.0",
     "rowdy-logger": "^1.0.2",
     "sequelize": "^6.6.2"
   },
@@ -11,5 +12,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon server.js"
-  }
+  },
+  "name": "welp_frontend",
+  "description": "",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Earth-Group/welp_frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-Earth-Group/welp_frontend/issues"
+  },
+  "homepage": "https://github.com/Team-Earth-Group/welp_frontend#readme"
 }

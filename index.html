@@ -25,7 +25,7 @@
                   <a>Login</a>
                 </span>
               </button>
-              <button class="signUpButton" type="submit">
+              <button class="signupButton" type="submit">
                 <span>
                   <a>Sign Up</a>
                 </span>
@@ -38,6 +38,36 @@
               <!-- made change here -->
             </a>
           </div>
+          <div class = "signupScreen">
+            <form class ="signupForm">
+              <label for = 'signupName'>Name</label>
+              <input type = "text" name="name" id="signupName">
+
+              <label for = 'signupEmail'>Email</label>
+              <input type = "email" name="email" id="signupEmail">
+
+              <label for = 'signupPassword'>Password</label>
+              <input type = "password" name="password" id="signupPassword">
+
+              <input type="submit" value="SIGN UP">
+
+
+            </form>
+          </div>
+
+          <div class = "loginScreen">
+            <form class="loginForm">
+              <label for = 'loginEmail'>Email</label>
+              <input type = "email" name="email" id="loginEmail">
+
+              <label for = 'loginPassword'>Password</label>
+              <input type = "password" name="password" id="loginPassword">
+
+              <input type="submit" value="LOGIN">
+            </form>
+          </div>
+
+
           <div class="searchBar">
             <div class="searchBarContainer">
               <form class="searchBarForm">
@@ -53,6 +83,7 @@
               </form>
             </div>
           </div>
+          <div class = "searchResult"></div>
         </div>
       </div>
     </div>
