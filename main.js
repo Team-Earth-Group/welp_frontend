@@ -76,12 +76,6 @@ loginForm.addEventListener('submit', async (event) => {
     }
 })
 
-searchBarForm.addEventListener('submit', (event) => {
-    event.preventDefault()
-    console.log(event.target)
-})
-
-
 //logout
 // document.querySelector('dont have a logout variable').addEventListener('click', () =>{
 //     localStorage.removeItem('userId')
