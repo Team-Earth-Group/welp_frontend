@@ -13,6 +13,19 @@ const searchBarForm = document.querySelector('.searchBarForm')
 const signupScreen = document.querySelector('.signupScreen')
 const loginScreen = document.querySelector('.loginScreen')
 
+
+const hideElements = (...elements) => {
+    for (let element of elements) {
+        element.classList.add('hide');
+    }
+}
+
+const showElements = (...elements) => {
+    for (let element of elements) {
+        element.classList.remove('hide');
+    }
+}
+
 //signup
 signupForm.addEventListener('submit', async (event) => {
     event.preventDefault()
@@ -20,26 +33,6 @@ signupForm.addEventListener('submit', async (event) => {
     const name = event.target.name.value
     const email = event.target.email.value
     const password = event.target.password.value
-
-    const hideElements = (...elements) => {
-        for (let element of elements) {
-            element.classList.add('hide');
-        }
-    }
-
-    const showElements = (...elements) => {
-        for (let element of elements) {
-            element.classList.remove('hide');
-        }
-    }
-
-    searchBarForm.addEventListener('submit', (event) => {
-        event.preventDefault()
-        console.log(event.target)
-    })
-
-
-
 
     try {
         const user = await axios.post(`${url}/users`, {
@@ -81,6 +74,11 @@ loginForm.addEventListener('submit', async (event) => {
         alert('Email or password incorrect, please try agin.')
 
     }
+})
+
+searchBarForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+    console.log(event.target)
 })
 
 
