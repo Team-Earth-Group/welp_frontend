@@ -65,12 +65,110 @@ html {
   background-color: #cabc35;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
+  transform: scale(1.1);
+}
+
+.loginButton:active,
+.signUpButton:active {
+  transform: scale(1);
 }
 
 .logo {
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 .logoImg {
   max-height: 175px;
+}
+
+.searchBar {
+  width: 50%;
+  margin-top: 50px;
+}
+
+.searchBarContainer,
+.searchBarForm {
+  display: flex;
+  justify-content: center;
+}
+
+.searchBarContainer {
+  align-items: center;
+  box-shadow: 0px 3px 1px -2px rgb(7 232 238 / 20%),
+    0px 2px 2px 0px rgb(7 232 238 / 14%), 0px 1px 5px 0px rgb(7 232 238 / 12%);
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.searchBarForm {
+  width: 100%;
+  overflow: hidden;
+}
+
+.leftSearchBar,
+.rightSearchBar {
+  padding: 10px;
+  width: 100%;
+  background-color: #ffeb2b;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: text;
+  display: inline-flex;
+  /* font-family: "Wendy One", sans-serif; */
+  font-weight: 400;
+  line-height: 1.1876em;
+  letter-spacing: 0.00938em;
+  font-size: 1rem;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.leftSearchBar {
+  position: relative;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.rightSearchBar {
+  position: relative;
+  border: none;
+}
+
+.keyword,
+.location {
+  /* font: inherit; */
+  /* color: white; */
+  width: 100%;
+  /* border: 1px; */
+  border-radius: 4px;
+  height: 1.1876em;
+  margin: 0;
+  display: block;
+  padding: 6px 0 7px;
+  min-width: 0;
+  background: white;
+  box-sizing: content-box;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: inherit;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0px 3px 1px -2px rgb(7 232 238 / 20%),
+    0px 2px 2px 0px rgb(7 232 238 / 14%), 0px 1px 5px 0px rgb(7 232 238 / 12%);
+}
+
+.searchButton {
+  color: #fff;
+  background-color: #ffeb2b;
+  height: auto;
+  border: none;
+}
+
+.searchButton:hover {
+  background-color: #cabc35;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.searchButton:active {
+  transform: scale(1);
 }
