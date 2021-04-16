@@ -176,14 +176,17 @@ html {
 .signupScreen,
 .signupForm,
 .loginScreen,
-.loginForm {
+.loginForm,
+.searchResult,
+.business {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .signupScreen,
-.loginScreen {
+.loginScreen,
+.searchResult {
   background-color: #ffeb2b;
   margin-top: 50px;
   border: solid black 2px;
@@ -197,7 +200,8 @@ html {
 }
 
 .signupForm,
-.loginForm {
+.loginForm,
+.business {
   flex-direction: column;
   width: 100%;
 }
@@ -281,7 +285,7 @@ html {
   display: none;
 }
 
-.searchResult{
+/* .searchResult {
   display: flex;
 }
 .businesses {
@@ -301,4 +305,4 @@ html {
 .business img {
   width: 200px;
   height: 200px;
-}
+} */
