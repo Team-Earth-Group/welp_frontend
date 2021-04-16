@@ -39,11 +39,11 @@ const removeAllChildren = (parent) => {
     }
 }
 
-const createComment = (comment) => {
+const createComment = (comment, business) => {
     const commentDiv = document.createElement('div')
     commentDiv.classList.add('comment')
     const userComment = document.createElement('h3')
-    userComment.innerText = `${comment.submittedBy}`
+    userComment.innerText = `${business.user.name}`
     const commentText = document.createElement('p')
     commentText.innerText = comment.text
     commentDiv.append(userComment)
@@ -143,7 +143,7 @@ const addBusiness = (business) => {
         commentSection.append(commentForm)
 
         for (let comment of comments) {
-            const newCommentDiv = createComment(comment)
+            const newCommentDiv = createComment(comment, business)
             commentSection.append(newCommentDiv)
         }
 
@@ -162,7 +162,7 @@ const addBusiness = (business) => {
                 text: commentText,
                 userId: currentUser.id
             })
-            const newComment = createComment(response.data.comment)
+            const newComment = createComment(response.data.comment, response.data.business)
             commentSection.append(newComment)
             hideElements(commentForm)
         })
