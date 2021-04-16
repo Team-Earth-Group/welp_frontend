@@ -17,7 +17,7 @@
   <body>
     <div id="main">
       <div class="body">
-        <div class="home">
+        <div class="home hidden">
           <div class="homeNav">
             <div class="navButtons">
               <button class="loginButton" type="submit">
@@ -69,7 +69,6 @@
                   autocomplete="off"
                 />
               </div>
-
               <button class="signupFormButton" value="SIGN UP" type="submit">
                 <span>
                   <a>Sign Up</a>
@@ -77,7 +76,6 @@
               </button>
             </form>
           </div>
-
           <div class="loginScreen hidden">
             <form class="loginForm" autocomplete="off">
               <div class="loginEmailInput">
@@ -107,7 +105,6 @@
               </button>
             </form>
           </div>
-
           <div class="searchBar">
             <div class="searchBarContainer">
               <form class="searchBarForm" autocomplete="off">
@@ -131,12 +128,176 @@
               </form>
             </div>
           </div>
-          <div class="searchResult">
-            <div class="business">
-              <div class="businessImg"><!-- <img src="" /> --></div>
-              <div></div>
-              <div></div>
-              <div></div>
+          <div class="searchResultContainer hidden">
+            <div class="searchResult">
+              <div class="business">
+                <div class="businessImg">
+                  <img src="https://i.imgur.com/7rStPHdb.jpg" />
+                </div>
+                <div>
+                  <h3>Business 1</h3>
+                </div>
+                <div>
+                  <h5>address</h5>
+                </div>
+                <div>
+                  <h6>short description</h6>
+                </div>
+                <button class="moreInfo">View</button>
+              </div>
+              <div class="business">
+                <div class="businessImg">
+                  <img src="https://i.imgur.com/KdmLTgXb.jpg" />
+                </div>
+                <div>
+                  <h3>Business 2</h3>
+                </div>
+                <div>
+                  <h5>address</h5>
+                </div>
+                <div>
+                  <h6>short description</h6>
+                </div>
+                <button class="moreInfo">View</button>
+              </div>
+              <div class="business">
+                <div class="businessImg">
+                  <img src="https://i.imgur.com/qTU8O9ub.jpg" />
+                </div>
+                <div>
+                  <h3>Business 3</h3>
+                </div>
+                <div>
+                  <h5>address</h5>
+                </div>
+                <div>
+                  <h6>short description</h6>
+                </div>
+                <button class="moreInfo">View</button>
+              </div>
+              <div class="business">
+                <div class="businessImg">
+                  <img src="https://i.imgur.com/TqJSbLAb.jpg" />
+                </div>
+                <div>
+                  <h3>Business 4</h3>
+                </div>
+                <div>
+                  <h5>address</h5>
+                </div>
+                <div>
+                  <h6>short description</h6>
+                </div>
+                <button class="moreInfo">View</button>
+              </div>
+              <div class="business">
+                <div class="businessImg">
+                  <img src="https://i.imgur.com/Ey4wY5mb.jpg" />
+                </div>
+                <div>
+                  <h3>Business 5</h3>
+                </div>
+                <div>
+                  <h5>address</h5>
+                </div>
+                <div>
+                  <h6>short description</h6>
+                </div>
+                <button class="moreInfo">View</button>
+              </div>
+              <div class="business">
+                <div class="businessImg">
+                  <img src="https://i.imgur.com/dGJSYcOb.jpg" />
+                </div>
+                <div>
+                  <h3>Business 6</h3>
+                </div>
+                <div>
+                  <h5>address</h5>
+                </div>
+                <div>
+                  <h6>short description</h6>
+                </div>
+                <button class="moreInfo">View</button>
+              </div>
+              <div class="business">
+                <div class="businessImg">
+                  <img src="https://i.imgur.com/2A8atLab.jpg" />
+                </div>
+                <div>
+                  <h3>Business 7</h3>
+                </div>
+                <div>
+                  <h5>address</h5>
+                </div>
+                <div>
+                  <h6>short description</h6>
+                </div>
+                <button class="moreInfo">View</button>
+              </div>
+              <div class="business">
+                <div class="businessImg">
+                  <img src="https://i.imgur.com/VbiLQXsb.jpg" />
+                </div>
+                <div>
+                  <h3>Business 8</h3>
+                </div>
+                <div>
+                  <h5>address</h5>
+                </div>
+                <div>
+                  <h6>short description</h6>
+                </div>
+                <button class="moreInfo">View</button>
+              </div>
+              <div class="business">
+                <div class="businessImg">
+                  <img src="https://i.imgur.com/hHpPZBYb.jpg" />
+                </div>
+                <div>
+                  <h3>Business 9</h3>
+                </div>
+                <div>
+                  <h5>address</h5>
+                </div>
+                <div>
+                  <h6>short description</h6>
+                </div>
+                <button class="moreInfo">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="businessPage">
+          <div class="returnButtonDiv">
+            <button class="returnButton">Return</button>
+          </div>
+          <div class="businessPageImgDiv">
+            <img
+              class="businessPageImg"
+              src="https://i.imgur.com/veqjQhE.jpg"
+            />
+          </div>
+          <div class="bussinessPageName"><h2>Some Business Name</h2></div>
+          <div class="businessPageDescription">
+            <p>This Business is Great!</p>
+          </div>
+          <div class="commentSection">
+            <div class="addComment">
+              <button class="addCommentButton">Add Comment</button>
+            </div>
+            <div class="formHolder">
+              <form>
+                <div class="inputComment">
+                  <input
+                    type="text"
+                    class="commentText"
+                    id="commentText"
+                    placeholder="Add comment here"
+                  />
+                  <button class="submitComment">Submit</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
