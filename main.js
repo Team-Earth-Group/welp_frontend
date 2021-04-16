@@ -37,21 +37,29 @@ const addBusiness = (business) => {
     console.log(business);
     const businessDiv = document.createElement('div')
     businessDiv.classList.add('business')
+    const imageDiv = document.createElement('div')
     const image = document.createElement('img')
     image.src = business.imageUrl
     image.alt = business.name
+    image.classList.add('businessImg')
+    imageDiv.append(image)
+    const nameDiv = document.createElement('div')
     const name = document.createElement('h3')
     name.innerText = business.name
+    nameDiv.append(name)
+    const locationDiv = document.createElement('div')
     const location = document.createElement('span')
     location.innerText = business.location
+    const descriptionDiv = document.createElement('div')
     const description = document.createElement('p')
     description.innerText = business.description
+    descriptionDiv.append(description)
     const detailsBtn = document.createElement('button')
     detailsBtn.innerText = 'View details'
-    businessDiv.append(image)
-    businessDiv.append(name)
-    businessDiv.append(location)
-    businessDiv.append(description)
+    businessDiv.append(imageDiv)
+    businessDiv.append(nameDiv)
+    businessDiv.append(locationDiv)
+    businessDiv.append(descriptionDiv)
     businessDiv.append(detailsBtn)
     return businessDiv
 }

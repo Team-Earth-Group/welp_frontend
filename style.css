@@ -284,6 +284,10 @@ html {
 .hidden {
   display: none;
 }
+.businessImg {
+  margin-top: 15px;
+  max-height: 175px;
+}
 
 /* .searchResult {
   display: flex;
