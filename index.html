@@ -19,6 +19,11 @@
       <div class="home">
         <div class="homeNav">
           <div class="navButtons">
+            <button class="logoutButton hidden" type="submit">
+              <span>
+                <a>Logout</a>
+              </span>
+            </button>
             <button class="loginButton" type="submit">
               <span>
                 <a>Login</a>
@@ -80,10 +85,10 @@
           <div class="searchBarContainer">
             <form class="searchBarForm" autocomplete="off">
               <div class="leftSearchBar">
-                <input class="keyword" name="keyword" placeholder="Keyword" autocomplete="off" name="" />
+                <input class="keyword" placeholder="Keyword" autocomplete="off" />
               </div>
               <div class="rightSearchBar">
-                <input class="location" name="location" placeholder="Location" autocomplete="off" />
+                <input class="location" placeholder="Location" autocomplete="off" />
               </div>
               <button class="searchButton">
                 <img src="./assets/magnifying-glass.png" />
@@ -92,6 +97,7 @@
           </div>
         </div>
         <div class="searchResult"></div>
+        <div class="businessDetails"></div>
       </div>
     </div>
   </div>

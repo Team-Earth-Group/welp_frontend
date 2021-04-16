@@ -4,7 +4,7 @@ const url = 'http://localhost:3001'
 const logoutBttn = document.querySelector('.logoutButton')
 const loginBttn = document.querySelector('.loginButton')
 const signupBttn = document.querySelector('.signupButton')
-
+const detailsBttn = document.querySelector('.detailsButton')
 
 //forms
 const signupForm = document.querySelector('.signupForm')
@@ -16,6 +16,7 @@ const signupScreen = document.querySelector('.signupScreen')
 const loginScreen = document.querySelector('.loginScreen')
 const searchResultScreen = document.querySelector('.searchResult')
 const searchBarScreen = document.querySelector('.searchBar')
+const businessDetailsScreen = document.querySelector('.businessDetails')
 
 const hideElements = (...elements) => {
     for (let element of elements) {
@@ -58,6 +59,10 @@ const addBusiness = (business) => {
     descriptionDiv.append(description)
     const detailsBtn = document.createElement('button')
     detailsBtn.innerText = 'View details'
+    detailsBtn.classList.add('detailsButton')
+
+    // you can add click event listener to the details button here to show the business details screen
+
     businessDiv.append(imageDiv)
     businessDiv.append(nameDiv)
     businessDiv.append(locationDiv)
@@ -135,13 +140,13 @@ searchBarForm.addEventListener('submit', async (event) => {
     }
 })
 //signup button
-signupBttn.addEventListener('click', () =>{
+signupBttn.addEventListener('click', () => {
     showElements(signupScreen)
     hideElements(loginScreen, searchBarScreen, searchResultScreen)
 })
 
 //login
-loginBttn.addEventListener('click', () =>{
+loginBttn.addEventListener('click', () => {
     console.log('hi')
     showElements(loginScreen)
     hideElements(signupScreen, searchBarScreen, searchResultScreen)
@@ -149,7 +154,7 @@ loginBttn.addEventListener('click', () =>{
 })
 
 //logout
-logoutBttn.addEventListener('click', () =>{
+logoutBttn.addEventListener('click', () => {
     localStorage.removeItem('userId')
     location.reload();
 
