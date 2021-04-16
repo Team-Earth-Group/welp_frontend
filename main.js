@@ -4,12 +4,13 @@ const url = 'http://localhost:3001'
 const logoutBttn = document.querySelector('.logoutButton')
 const loginBttn = document.querySelector('.loginButton')
 const signupBttn = document.querySelector('.signupButton')
-const detailsBttn = document.querySelector('.detailsButton')
+
 
 //forms
 const signupForm = document.querySelector('.signupForm')
 const loginForm = document.querySelector('.loginForm')
 const searchBarForm = document.querySelector('.searchBarForm')
+
 
 //screens
 const signupScreen = document.querySelector('.signupScreen')
@@ -18,6 +19,8 @@ const searchResultScreen = document.querySelector('.searchResult')
 const searchBarScreen = document.querySelector('.searchBar')
 const businessDetailsScreen = document.querySelector('.businessDetails')
 
+
+//functions
 const hideElements = (...elements) => {
     for (let element of elements) {
         element.classList.add('hidden');
@@ -35,6 +38,26 @@ const removeAllChildren = (parent) => {
         parent.removeChild(parent.firstChild);
     }
 }
+
+const createComment = (comment) => {
+    const commentDiv = document.createElement('div')
+    commentDiv.classList.add('comment')
+    const userComment = document.createElement('h3')
+    userComment.innerText = `${comment.submittedBy}`
+    const commentText = document.createElement('p')
+    commentText.innerText = comment.text
+    commentDiv.append(userComment)
+    commentDiv.append(commentText)
+
+    return commentDiv
+}
+
+const getUser = async () => {
+    const userId = localStorage.getItem('userId')
+    const response = await axios.get(`${url}/users/${userId}`)
+    return response.data.user
+}
+
 
 const addBusiness = (business) => {
     console.log(business);
@@ -59,18 +82,102 @@ const addBusiness = (business) => {
     descriptionDiv.append(description)
     const detailsBtn = document.createElement('button')
     detailsBtn.innerText = 'View details'
+    detailsBtn.setAttribute('data-business-id', business.id)
     detailsBtn.classList.add('detailsButton')
-
-    // you can add click event listener to the details button here to show the business details screen
 
     businessDiv.append(imageDiv)
     businessDiv.append(nameDiv)
     businessDiv.append(locationDiv)
     businessDiv.append(descriptionDiv)
     businessDiv.append(detailsBtn)
+
+    // listing a single business
+    detailsBtn.addEventListener('click', async (event) => {
+        event.preventDefault()
+        hideElements(searchResultScreen)
+        removeAllChildren(businessDetailsScreen)
+
+        // business info
+        const businessId = event.target.getAttribute('data-business-id')
+        const response = await axios.get(`${url}/businesses/${businessId}/comments`)
+        const business = response.data.business
+        const comments = response.data.comments
+
+        const businessImage = document.createElement('img')
+        businessImage.src = business.imageUrl
+        businessImage.alt = business.name
+        const businessName = document.createElement('h2')
+        businessName.innerText = business.name
+        const description = document.createElement('p')
+        description.innerText = business.description
+        const createdBy = document.createElement('p')
+        createdBy.innerHTML = `-Created by <b>${business.user.name}</b>`
+
+        // comment section
+        const commentSection = document.createElement('div')
+        commentSection.classList.add('commentSection')
+        const addCommentBtn = document.createElement('button')
+        addCommentBtn.innerText = 'Add Comment'
+        addCommentBtn.classList.add('addCommentBtn')
+        const commentForm = document.createElement('form')
+        commentForm.classList.add('commentForm')
+        const divComment = document.createElement('div')
+        const labelComment = document.createElement('label')
+        labelComment.setAttribute("for", "commentText")
+        labelComment.innerText = "Type your comment"
+        const inputComment = document.createElement('input')
+        inputComment.setAttribute("type", "text")
+        inputComment.setAttribute("name", "commentText")
+        inputComment.setAttribute("id", "commentText")
+        const submitComment = document.createElement('input')
+        submitComment.setAttribute("type", "submit")
+
+        divComment.append(labelComment)
+        divComment.append(inputComment)
+        divComment.append(submitComment)
+        commentForm.append(divComment)
+
+        hideElements(commentForm)
+
+        commentSection.append(addCommentBtn)
+        commentSection.append(commentForm)
+
+        for (let comment of comments) {
+            const newCommentDiv = createComment(comment)
+            commentSection.append(newCommentDiv)
+        }
+
+        businessDetailsScreen.append(businessImage)
+        businessDetailsScreen.append(businessName)
+        businessDetailsScreen.append(description)
+        businessDetailsScreen.append(createdBy)
+        businessDetailsScreen.append(commentSection)
+
+        // add comment form submitted
+        commentForm.addEventListener('submit', async (event) => {
+            event.preventDefault()
+            const commentText = event.target.commentText.value
+            const currentUser = await getUser()
+            const response = await axios.post(`${url}/businesses/${businessId}/comments`, {
+                text: commentText,
+                userId: currentUser.id
+            })
+            const newComment = createComment(response.data.comment)
+            commentSection.append(newComment)
+            hideElements(commentForm)
+        })
+
+        // add comment btn clicked
+        addCommentBtn.addEventListener('click', () => {
+            showElements(commentForm)
+        })
+
+    })
+
     return businessDiv
 }
 
+// event listeners
 //signup
 signupForm.addEventListener('submit', async (event) => {
     event.preventDefault()
@@ -125,7 +232,7 @@ loginForm.addEventListener('submit', async (event) => {
     }
 })
 
-
+//search
 searchBarForm.addEventListener('submit', async (event) => {
     event.preventDefault()
     const keyword = event.target.keyword.value
@@ -153,6 +260,7 @@ loginBttn.addEventListener('click', () => {
 
 })
 
+
 //logout
 logoutBttn.addEventListener('click', () => {
     localStorage.removeItem('userId')
@@ -160,4 +268,4 @@ logoutBttn.addEventListener('click', () => {
 
 })
 
-// listing a single business
+
