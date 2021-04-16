@@ -1,6 +1,7 @@
 const url = 'http://localhost:3001'
 
 //bttn
+const logoutBttn = document.querySelector('.logoutButton')
 const loginBttn = document.querySelector('.loginButton')
 const signupBttn = document.querySelector('.signupButton')
 
@@ -14,16 +15,17 @@ const searchBarForm = document.querySelector('.searchBarForm')
 const signupScreen = document.querySelector('.signupScreen')
 const loginScreen = document.querySelector('.loginScreen')
 const searchResultScreen = document.querySelector('.searchResult')
+const searchBarScreen = document.querySelector('.searchBar')
 
 const hideElements = (...elements) => {
     for (let element of elements) {
-        element.classList.add('hide');
+        element.classList.add('hidden');
     }
 }
 
 const showElements = (...elements) => {
     for (let element of elements) {
-        element.classList.remove('hide');
+        element.classList.remove('hidden');
     }
 }
 
@@ -80,6 +82,8 @@ signupForm.addEventListener('submit', async (event) => {
         })
         const userId = user.data.user.id
         localStorage.setItem('userId', userId)
+        showElements(searchResultScreen, logoutBttn)
+        hideElements(signupScreen, loginBttn)
 
         alert(`Welcome to Welp, ${user.data.user.name}!`)
 
@@ -105,6 +109,8 @@ loginForm.addEventListener('submit', async (event) => {
         })
         const userId = user.data.user.id
         localStorage.setItem('userId', userId)
+        showElements(searchResultScreen, logoutBttn)
+        hideElements(loginScreen, loginBttn, signupBttn)
 
         alert(`Welcome back, ${user.data.user.name}!`)
     } catch (error) {
@@ -128,9 +134,25 @@ searchBarForm.addEventListener('submit', async (event) => {
         searchResultScreen.appendChild(businessDiv)
     }
 })
+//signup button
+signupBttn.addEventListener('click', () =>{
+    showElements(signupScreen)
+    hideElements(loginScreen, searchBarScreen, searchResultScreen)
+})
+
+//login
+loginBttn.addEventListener('click', () =>{
+    console.log('hi')
+    showElements(loginScreen)
+    hideElements(signupScreen, searchBarScreen, searchResultScreen)
+
+})
 
 //logout
-// document.querySelector('dont have a logout variable').addEventListener('click', () =>{
-//     localStorage.removeItem('userId')
-//     location.reload();
-// })
+logoutBttn.addEventListener('click', () =>{
+    localStorage.removeItem('userId')
+    location.reload();
+
+})
+
+// listing a single business
