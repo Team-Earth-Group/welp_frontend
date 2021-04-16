@@ -280,3 +280,25 @@ html {
 .hidden {
   display: none;
 }
+
+.searchResult{
+  display: flex;
+}
+.businesses {
+  display: flex;
+}
+
+.business {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: #ffeb2b;
+  margin: 10px;
+  padding: 10px;
+}
+
+.business img {
+  width: 200px;
+  height: 200px;
+}
