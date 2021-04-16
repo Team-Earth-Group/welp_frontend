@@ -10,9 +10,10 @@ const signupForm = document.querySelector('.signupForm')
 const loginForm = document.querySelector('.loginForm')
 const searchBarForm = document.querySelector('.searchBarForm')
 
+//screens
 const signupScreen = document.querySelector('.signupScreen')
 const loginScreen = document.querySelector('.loginScreen')
-
+const searchResultScreen = document.querySelector('.searchResult')
 
 const hideElements = (...elements) => {
     for (let element of elements) {
@@ -24,6 +25,35 @@ const showElements = (...elements) => {
     for (let element of elements) {
         element.classList.remove('hide');
     }
+}
+
+const removeAllChildren = (parent) => {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+const addBusiness = (business) => {
+    console.log(business);
+    const businessDiv = document.createElement('div')
+    businessDiv.classList.add('business')
+    const image = document.createElement('img')
+    image.src = business.imageUrl
+    image.alt = business.name
+    const name = document.createElement('h3')
+    name.innerText = business.name
+    const location = document.createElement('span')
+    location.innerText = business.location
+    const description = document.createElement('p')
+    description.innerText = business.description
+    const detailsBtn = document.createElement('button')
+    detailsBtn.innerText = 'View details'
+    businessDiv.append(image)
+    businessDiv.append(name)
+    businessDiv.append(location)
+    businessDiv.append(description)
+    businessDiv.append(detailsBtn)
+    return businessDiv
 }
 
 //signup
@@ -73,6 +103,21 @@ loginForm.addEventListener('submit', async (event) => {
         console.log(error)
         alert('Email or password incorrect, please try agin.')
 
+    }
+})
+
+
+searchBarForm.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    const keyword = event.target.keyword.value
+    const location = event.target.location.value
+    const response = await axios.get(`${url}/businesses?keyword=${keyword}&location=${location}`)
+    const businesses = response.data.businesses
+
+    removeAllChildren(searchResultScreen)
+    for (let business of businesses) {
+        const businessDiv = addBusiness(business)
+        searchResultScreen.appendChild(businessDiv)
     }
 })
 
