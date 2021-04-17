@@ -288,6 +288,14 @@ html {
 .hidden {
   display: none;
 }
+.businessImg {
+  margin-top: 15px;
+  max-height: 175px;
+}
+.businessImg img {
+  width: 160px;
+  height: 160px;
+}
 
 .searchResult {
   margin: 10px;
