@@ -19,6 +19,8 @@ const searchResultScreen = document.querySelector('.searchResult')
 const searchBarScreen = document.querySelector('.searchBar')
 const businessDetailsScreen = document.querySelector('.businessDetails')
 
+//constants
+const ratings = [1, 2, 3, 4, 5]
 
 //functions
 const hideElements = (...elements) => {
@@ -39,14 +41,17 @@ const removeAllChildren = (parent) => {
     }
 }
 
-const createComment = (comment, business) => {
+const createComment = (comment, user) => {
     const commentDiv = document.createElement('div')
     commentDiv.classList.add('comment')
     const userComment = document.createElement('h3')
-    userComment.innerText = `${business.user.name}`
+    userComment.innerText = `${user.name}`
+    const commentRating = document.createElement('p')
+    commentRating.innerText = `Rating: ${comment.rating}`
     const commentText = document.createElement('p')
     commentText.innerText = comment.text
     commentDiv.append(userComment)
+    commentDiv.append(commentRating)
     commentDiv.append(commentText)
 
     return commentDiv
@@ -60,7 +65,6 @@ const getUser = async () => {
 
 
 const addBusiness = (business) => {
-    console.log(business);
     const businessDiv = document.createElement('div')
     businessDiv.classList.add('business')
     const imageDiv = document.createElement('div')
@@ -102,7 +106,6 @@ const addBusiness = (business) => {
         const response = await axios.get(`${url}/businesses/${businessId}/comments`)
         const business = response.data.business
         const comments = response.data.comments
-
         const businessImage = document.createElement('img')
         businessImage.src = business.imageUrl
         businessImage.alt = business.name
@@ -129,11 +132,20 @@ const addBusiness = (business) => {
         inputComment.setAttribute("type", "text")
         inputComment.setAttribute("name", "commentText")
         inputComment.setAttribute("id", "commentText")
+        const ratingComment = document.createElement('select')
+        //create and append the options
+        for (let i = 0; i < ratings.length; i++) {
+            let option = document.createElement("option");
+            option.value = ratings[i];
+            option.text = ratings[i];
+            ratingComment.appendChild(option);
+        }
         const submitComment = document.createElement('input')
         submitComment.setAttribute("type", "submit")
 
         divComment.append(labelComment)
         divComment.append(inputComment)
+        divComment.append(ratingComment)
         divComment.append(submitComment)
         commentForm.append(divComment)
 
@@ -143,7 +155,7 @@ const addBusiness = (business) => {
         commentSection.append(commentForm)
 
         for (let comment of comments) {
-            const newCommentDiv = createComment(comment, business)
+            const newCommentDiv = createComment(comment, comment.user)
             commentSection.append(newCommentDiv)
         }
 
@@ -160,9 +172,10 @@ const addBusiness = (business) => {
             const currentUser = await getUser()
             const response = await axios.post(`${url}/businesses/${businessId}/comments`, {
                 text: commentText,
-                userId: currentUser.id
+                userId: currentUser.id,
+                rating: ratingComment.value
             })
-            const newComment = createComment(response.data.comment, response.data.business)
+            const newComment = createComment(response.data.comment, currentUser)
             commentSection.append(newComment)
             hideElements(commentForm)
         })
