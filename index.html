@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -17,7 +16,8 @@
   <body>
     <div id="main">
       <div class="body">
-        <div class="home hidden">
+        <div class="home">
+          <!-- add hidden on divClass home to show single business page -->
           <div class="homeNav">
             <div class="navButtons">
               <button class="loginButton" type="submit">
@@ -109,11 +109,17 @@
             <div class="searchBarContainer">
               <form class="searchBarForm" autocomplete="off">
                 <div class="leftSearchBar">
-                  <input
+                  <select
                     class="keyword"
                     placeholder="Keyword"
                     autocomplete="off"
-                  />
+                  >
+                    <option></option>
+                    <option>Restaurant</option>
+                    <option>Mechanic</option>
+                    <option>Grocer</option>
+                    <option>Hotel</option>
+                  </select>
                 </div>
                 <div class="rightSearchBar">
                   <input
@@ -268,56 +274,61 @@
             </div>
           </div>
         </div>
-        <div class="businessPage">
-          <div class="returnButtonDiv">
-            <button class="returnButton">Return</button>
-          </div>
-          <div class="businessPageImgDiv">
-            <img
-              class="businessPageImg"
-              src="https://i.imgur.com/veqjQhE.jpg"
-            />
-          </div>
-          <div class="bussinessPageName"><h2>Some Business Name</h2></div>
-          <div class="businessAddress"><h5>some city in some state</h5></div>
-          <div class="bussinessType"><h6>not NOT a restaurant</h6></div>
-          <div class="businessPageDescription">
-            <p>This Business is Great!</p>
-          </div>
-          <div class="nameOfUser"><h3>JohnDoe</h3></div>
-          <div class="commentSection">
-            <div class="addReview">
-              <button class="addReviewButton">Leave A Review</button>
+        <div class="hidden" id="businessPage">
+          <!-- i changed the class to hidden here because it wasnt hiding, use id to summon -->
+          <div class="businessPageContainer">
+            <div class="returnButtonDiv">
+              <button class="returnButton">Return</button>
             </div>
-            <div class="formHolder">
-              <form>
-                <div class="inputComment">
-                  <input
-                    type="text"
-                    class="commentText"
-                    id="commentText"
-                    placeholder="Write a review"
-                  />
-                  <select class="rating">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                  <button class="submitComment">Submit</button>
-                </div>
-              </form>
+            <div class="businessPageImgDiv">
+              <img
+                class="businessPageImg"
+                src="https://i.imgur.com/veqjQhE.jpg"
+              />
             </div>
-            <div class="comments">
-              <div class="commentUserName"><h3>SomeUserName</h3></div>
-              <div class="headline"><h4>4stars</h4></div>
-              <div class="usersComment"><p>somethingAboutService</p></div>
+            <div class="bussinessPageName"><h2>Some Business Name</h2></div>
+            <div class="businessAddress">
+              <h5>some city in some state</h5>
             </div>
-            <div class="comments">
-              <div class="commentUserName"><h3>SomeUserName</h3></div>
-              <div class="headline"><h4>3stars</h4></div>
-              <div class="usersComment"><p>somethingAboutService</p></div>
+            <div class="bussinessType"><h6>not NOT a restaurant</h6></div>
+            <div class="businessPageDescription">
+              <p>This Business is Great!</p>
+            </div>
+            <div class="nameOfUser"><h3>JohnDoe</h3></div>
+            <div class="commentSection">
+              <div class="addReview">
+                <button class="addReviewButton">Leave A Review</button>
+              </div>
+              <div class="formHolder">
+                <form>
+                  <div class="inputComment">
+                    <input
+                      type="text"
+                      class="commentText"
+                      id="commentText"
+                      placeholder="Write a review"
+                    />
+                    <select class="rating">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                    <button class="submitComment">Submit</button>
+                  </div>
+                </form>
+              </div>
+              <div class="comments">
+                <div class="commentUserName"><h3>SomeUserName</h3></div>
+                <div class="headline"><h4>4stars</h4></div>
+                <div class="usersComment"><p>somethingAboutService</p></div>
+              </div>
+              <div class="comments">
+                <div class="commentUserName"><h3>SomeUserName</h3></div>
+                <div class="headline"><h4>3stars</h4></div>
+                <div class="usersComment"><p>somethingAboutService</p></div>
+              </div>
             </div>
           </div>
         </div>
