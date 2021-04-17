@@ -358,7 +358,8 @@ html {
 }
 
 .returnButton,
-.submitComment {
+.submitComment,
+.addReviewButton {
   margin-bottom: 20px;
   margin-top: 20px;
   font-size: 15px;
@@ -375,6 +376,37 @@ html {
   -webkit-text-stroke-color: black;
   box-shadow: 0px 3px 1px -2px rgb(7 232 238 / 20%),
     0px 2px 2px 0px rgb(7 232 238 / 14%), 0px 1px 5px 0px rgb(7 232 238 / 12%);
+}
+
+.returnButton:hover,
+.submitComment:hover,
+.addReviewButton:hover {
+  color: white;
+  background-color: #00f764;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+  transform: scale(1.1);
+}
+
+.returnButton:active,
+.submitComment:active,
+.addReviewButton:active {
+  transform: scale(1);
+}
+
+/* comment section */
+
+.commentSection {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ff2ba9;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.addReview,
+.addReviewButton {
+  align-self: flex-end;
 }
 
 .inputComment {
