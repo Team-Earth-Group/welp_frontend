@@ -1,200 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Welp!!</title>
-  </head>
 
-  <body>
-    <div id="main">
-      <div class="body">
-        <div class="home">
-          <!-- hide these buttons when on landing page -->
-          <div class="loggedInNav hidden">
-            <div class="leftSide">
-              <div class="lists">
-                <button class="addBusinessButton" type="submit">
-                  <span>
-                    <a>Add</a>
-                  </span>
-                </button>
-                <button class="showBusinessButton" type="submit">
-                  <span>
-                    <a>Show All</a>
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div class="rightSide">
-              <div class="logoutNav">
-                <button class="logoutButton" type="submit">
-                  <span>
-                    <a>Logout</a>
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- hide these buttons when logged in -->
-          <div class="homeNav">
-            <div class="navButtons">
-              <button class="loginButton" type="submit">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Welp!!</title>
+</head>
+
+<body>
+  <div id="main">
+    <div class="body">
+      <div class="home">
+        <!-- hide these buttons when on landing page -->
+        <div class="loggedInNav">
+          <div class="leftSide">
+            <div class="lists">
+              <button class="showBusinessButton" type="submit">
                 <span>
-                  <a>Login</a>
+                  <a>All Businesses</a>
                 </span>
               </button>
-              <button class="signupButton" type="submit">
+              <button class="addBusinessButton hidden" type="submit">
                 <span>
-                  <a>Sign Up</a>
+                  <a>List your businesses</a>
                 </span>
               </button>
             </div>
           </div>
-          <div class="logo">
-            <a>
-              <img class="logoImg" src="./assets/welpLogo.png" />
-            </a>
+        </div>
+        <!-- hide these buttons when logged in -->
+        <div class="homeNav">
+          <div class="navButtons">
+            <button class="loginButton" type="submit">
+              <span>
+                <a>Login</a>
+              </span>
+            </button>
+            <button class="signupButton" type="submit">
+              <span>
+                <a>Sign Up</a>
+              </span>
+            </button>
+            <button class="logoutButton hidden" type="submit">
+              <span>
+                <a>Logout</a>
+              </span>
+            </button>
           </div>
-          <div class="signupScreen hidden">
-            <form class="signupForm" autocomplete="off">
-              <div class="signupNameInput">
-                <input
-                  type="text"
-                  name="name"
-                  class="signupName"
-                  id="signupName"
-                  placeholder="Name"
-                  autocomplete="off"
-                />
-              </div>
-              <div class="signupEmailInput">
-                <input
-                  type="email"
-                  name="email"
-                  class="signupEmail"
-                  id="signupEmail"
-                  placeholder="Email"
-                  autocomplete="off"
-                />
-              </div>
-              <div class="signupPasswordInput">
-                <input
-                  type="password"
-                  name="password"
-                  class="signupPassword"
-                  id="signupPassword"
-                  placeholder="Password"
-                  autocomplete="off"
-                />
-              </div>
-              <button class="signupFormButton" value="SIGN UP" type="submit">
-                <span>
-                  <a>Sign Up</a>
-                </span>
-              </button>
-            </form>
-          </div>
-          <div class="loginScreen hidden">
-            <form class="loginForm" autocomplete="off">
-              <div class="loginEmailInput">
-                <input
-                  type="email"
-                  name="email"
-                  class="loginEmail"
-                  id="loginEmail"
-                  placeholder="Email"
-                  autocomplete="off"
-                />
-              </div>
-              <div class="rightSearchBar">
-                <input
-                  class="location"
-                  name="location"
-                  placeholder="Location"
-                  autocomplete="off"
-                />
-              </div>
-              <button class="searchButton">
-                <img src="./assets/magnifying-glass.png" />
-              </button>
-            </form>
-          </div>
-
-          <div class="searchBar">
-            <div class="searchBarContainer">
-              <form class="searchBarForm" autocomplete="off">
-                <div class="leftSearchBar">
-                  <select class="keyword">
-                    <option>Business</option>
-                    <option>Restaurant</option>
-                    <option>Mechanic</option>
-                    <option>Grocer</option>
-                    <option>Hotel</option>
-                  </select>
-                </div>
-                <div class="rightSearchBar">
-                  <input
-                    class="location"
-                    name="location"
-                    placeholder="Location"
-                    autocomplete="off"
-                  />
-                </div>
-                <button class="searchButton">
-                  <img src="./assets/magnifying-glass.png" />
-                </button>
-              </form>
+        </div>
+        <div class="logo">
+          <a>
+            <img class="logoImg" src="./assets/welpLogo.png" />
+          </a>
+        </div>
+        <div class="signupScreen hidden">
+          <form class="signupForm" autocomplete="off">
+            <div class="signupNameInput">
+              <input type="text" name="name" class="signupName" id="signupName" placeholder="Name" autocomplete="off" />
             </div>
-          </div>
-          <div class="searchResultContainer hidden"></div>
-          <!-- show all businesses is dynamic and will hold any number of business -->
-          <div class="showAllBusinesses hidden"></div>
-
-          <div class="addBusinessForm hidden">
-            <form class="registerForm" autocomplete="off">
-              <div class="registerNameInput">
-                <input
-                  type="text"
-                  name="name"
-                  class="registerName"
-                  id="registerName"
-                  placeholder="Business Name"
-                  autocomplete="off"
-                />
-              </div>
-              <div class="businessLocationInput">
-                <input
-                  type="locationInput"
-                  name="location"
-                  class="businessLocation"
-                  id="location"
-                  placeholder="Location"
-                  autocomplete="off"
-                />
-              </div>
-              <div class="businessDescriptionInput">
-                <input
-                  type="description"
-                  name="description"
-                  class="businessDescription"
-                  id="description"
-                  placeholder="Description"
-                  autocomplete="off"
-                />
-              </div>
-
-              <div class="businessTypeInput">
-                <select class="businessTypeSelect">
+            <div class="signupEmailInput">
+              <input type="email" name="email" class="signupEmail" id="signupEmail" placeholder="Email"
+                autocomplete="off" />
+            </div>
+            <div class="signupPasswordInput">
+              <input type="password" name="password" class="signupPassword" id="signupPassword" placeholder="Password"
+                autocomplete="off" />
+            </div>
+            <button class="signupFormButton" value="SIGN UP" type="submit">
+              <span>
+                <a>Sign Up</a>
+              </span>
+            </button>
+          </form>
+        </div>
+        <div class="loginScreen hidden">
+          <form class="loginForm" autocomplete="off">
+            <div class="loginEmailInput">
+              <input type="email" name="email" class="loginEmail" id="loginEmail" placeholder="Email"
+                autocomplete="off" />
+            </div>
+            <div class="loginPasswordInput">
+              <input type="password" name="password" class="loginPassword" id="loginPassword" placeholder="Password"
+                autocomplete="off" />
+            </div>
+            <button class="loginFormButton" value="LOG IN" type="submit">
+              <span>
+                <a>Login</a>
+              </span>
+            </button>
+          </form>
+        </div>
+        <div class="searchBar">
+          <div class="searchBarContainer">
+            <form class="searchBarForm" autocomplete="off">
+              <div class="leftSearchBar">
+                <select class="keyword">
                   <option>Business</option>
                   <option>Restaurant</option>
                   <option>Mechanic</option>
@@ -202,101 +108,62 @@
                   <option>Hotel</option>
                 </select>
               </div>
-              <button class="registerFormButton" value="REGISTER" type="submit">
-                <span>
-                  <a>Register</a>
-                </span>
+              <div class="rightSearchBar">
+                <input class="location" name="location" placeholder="Location" autocomplete="off" />
+              </div>
+              <button class="searchButton">
+                <img src="./assets/magnifying-glass.png" />
               </button>
             </form>
           </div>
         </div>
 
-        <!-- <div class="businessPage hidden">
-          <div class="returnButtonDiv">
-            <button class="returnButton">Return</button>
-          </div>
-          <div class="businessPageImgDiv">
-            <img
-              class="businessPageImg"
-              src="https://i.imgur.com/veqjQhE.jpg"
-            />
-          </div>
-          <div class="bussinessPageName">
-            <h2>Some Business Name</h2>
-          </div>
-          <div class="businessAddress">
-            <h5>some city in some state</h5>
-          </div>
-          <div class="bussinessType">
-            <h6>not NOT a restaurant</h6>
-          </div>
-          <div class="businessPageDescription">
-            <p>This Business is Great!</p>
-          </div>
-          <div class="nameOfUser">
-            <h3>JohnDoe</h3>
-          </div>
-          <div class="businessButtonContainer">
-            <button class="editButton">Edit</button>
-            <button class="deleteButton">Delete</button>
-          </div>
-          <div class="commentSection">
-            <div class="addReview">
-              <button class="addReviewButton">Leave A Review</button>
+        <div class="addBusinessForm hidden">
+          <form class="registerForm" autocomplete="off">
+            <div class="registerNameInput">
+              <input type="text" name="name" class="registerName" id="registerName" placeholder="Business Name"
+                autocomplete="off" />
             </div>
-            <div class="formHolder">
-              <form>
-                <div class="inputComment">
-                  <input
-                    type="text"
-                    class="commentText"
-                    id="commentText"
-                    name="commentText"
-                    placeholder="Write a review"
-                  />
-                  <select class="rating">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                  <button class="submitComment">Submit</button>
-                </div>
-              </form>
+            <div class="businessLocationInput">
+              <input type="locationInput" name="location" class="businessLocation" id="location" placeholder="Location"
+                autocomplete="off" />
+            </div>
+            <div class="businessImageUrlInput">
+              <input type="text" name="imageUrl" class="businessImageUrl" id="imageUrl" placeholder="Image Url"
+                autocomplete="off" />
+            </div>
+            <div class="businessDescriptionInput">
+              <input type="description" name="description" class="businessDescription" id="description"
+                placeholder="Description" autocomplete="off" />
             </div>
 
-            <div class="comments">
-              <div class="commentUserName">
-                <h3>SomeUserName</h3>
-              </div>
-              <div class="headline">
-                <h4>4stars</h4>
-              </div>
-              <div class="usersComment">
-                <p>somethingAboutService</p>
-              </div>
+            <div class="businessTypeInput">
+              <select class="businessTypeSelect">
+                <option>Business</option>
+                <option>Restaurant</option>
+                <option>Mechanic</option>
+                <option>Grocer</option>
+                <option>Hotel</option>
+              </select>
             </div>
-            <div class="comments">
-              <div class="commentUserName">
-                <h3>SomeUserName</h3>
-              </div>
-              <div class="headline">
-                <h4>3stars</h4>
-              </div>
-              <div class="usersComment">
-                <p>somethingAboutService</p>
-              </div>
-            </div>
-          </div>
-        </div> -->
+            <button class="registerFormButton" value="REGISTER" type="submit">
+              <span>
+                <a>Register</a>
+              </span>
+            </button>
+          </form>
+        </div>
+        <div class="searchResultContainer hidden"></div>
+        <!-- show all businesses is dynamic and will hold any number of business -->
+        <!-- <div class="showAllBusinesses hidden"></div>
+        <div class="listYourBusinesses hidden"></div> -->
       </div>
+
+      <div class="businessPage hidden"></div>
     </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js "
-      async
-      defer
-    ></script>
-    <script src="main.js" async defer></script>
-  </body>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js " async defer></script>
+  <script src="main.js" async defer></script>
+</body>
+
 </html>
