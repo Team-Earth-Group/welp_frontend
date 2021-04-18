@@ -26,6 +26,29 @@ html {
   background-attachment: fixed;
   overflow: auto;
 }
+
+.loggedInNav {
+  display: flex;
+  width: 90%;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.leftSide {
+  display: flex;
+  width: 90%;
+  justify-content: flex-start;
+  margin-top: 25px;
+}
+
+.rightSide {
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
 .homeNav {
   display: flex;
   width: 90%;
@@ -33,7 +56,8 @@ html {
   margin-top: 25px;
 }
 
-.navButtons {
+.navButtons,
+.lists {
   display: flex;
   justify-content: space-between;
   width: 200px;
@@ -41,7 +65,10 @@ html {
 }
 
 .loginButton,
-.signupButton {
+.signupButton,
+.logoutButton,
+.addBusinessButton,
+.showBusinessButton {
   padding: 6px 16px;
   font-size: 17px;
   font-family: "Wendy One", sans-serif;
@@ -60,21 +87,31 @@ html {
 }
 
 .loginButton:hover,
-.signupButton:hover {
+.signupButton:hover,
+.logoutButton:hover,
+.addBusinessButton:hover,
+.showBusinessButton:hover {
   color: white;
   background-color: #f7e000;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
   transform: scale(1.1);
 }
+.logo:hover {
+  transform: scale(1.05);
+}
 
 .loginButton:active,
-.signupButton:active {
+.signupButton:active,
+.logoutButton:active,
+.logo:active,
+.addBusinessButton,
+.showBusinessButton {
   transform: scale(1);
 }
 
 .logo {
-  margin-top: 150px;
+  margin-top: 110px;
 }
 
 .logoImg {
@@ -182,14 +219,19 @@ html {
 .signupForm,
 .loginScreen,
 .loginForm,
-.business {
+.business,
+/* .addBusinessFormContainer, */
+.addBusinessForm,
+.registerForm {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .signupScreen,
-.loginScreen {
+.loginScreen,
+/* .addBusinessFormContainer, */
+.addBusinessForm {
   background-color: #ffeb2b;
   margin-top: 50px;
   border: solid black 2px;
@@ -203,7 +245,8 @@ html {
 }
 /* changes made somewhere here */
 .signupForm,
-.loginForm {
+.loginForm,
+.registerForm {
   flex-direction: column;
   width: 100%;
 }
@@ -212,7 +255,11 @@ html {
 .signupEmailInput,
 .signupPasswordInput,
 .loginEmailInput,
-.loginPasswordInput {
+.loginPasswordInput,
+.registerNameInput,
+.businessLocationInput,
+.businessDescriptionInput,
+.businessTypeInput {
   padding: 10px;
   width: 100%;
   color: rgba(0, 0, 0, 0.87);
@@ -230,7 +277,11 @@ html {
 .signupEmail,
 .signupPassword,
 .loginEmail,
-.loginPassword {
+.loginPassword,
+.registerName,
+.businessLocation,
+.businessDescription,
+.businessTypeSelect {
   /* color: white; */
   width: 100%;
   /* border: 1px; */
@@ -251,7 +302,8 @@ html {
 }
 
 .signupFormButton,
-.loginFormButton {
+.loginFormButton,
+.registerFormButton {
   padding: 6px 16px;
   font-size: 17px;
   font-family: "Wendy One", sans-serif;
@@ -271,7 +323,8 @@ html {
 
 .signupFormButton:hover,
 .loginFormButton:hover,
-.business button:hover {
+.business button:hover,
+.registerFormButton:hover {
   color: white;
   background-color: #00f764;
   -webkit-text-stroke-width: 1.5px;
@@ -281,7 +334,8 @@ html {
 
 .signupFormButton:active,
 .loginFormButton:active,
-.business button:active {
+.business button:active,
+.registerFormButton:active {
   transform: scale(1);
 }
 
@@ -345,13 +399,36 @@ html {
     0px 2px 2px 0px rgb(7 232 238 / 14%), 0px 1px 5px 0px rgb(7 232 238 / 12%);
 }
 
+/* all business page */
+
+.showAllBusinesses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: fit-content;
+  align-items: center;
+  background-color: #ffeb2b;
+  margin-top: 50px;
+  border: solid black 2px;
+  border-radius: 5px;
+  padding: 20px;
+  width: 350px;
+  margin-bottom: 100px;
+  box-shadow: 0px 3px 1px -2px rgb(7 232 238 / 20%),
+    0px 2px 2px 0px rgb(7 232 238 / 14%), 0px 1px 5px 0px rgb(7 232 238 / 12%);
+}
+
 /* business page */
 
 .businessPage {
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* margin: 10px;
+  padding: 10px; */
 }
 
 .businessPageImgDiv {
@@ -367,7 +444,9 @@ html {
 
 .returnButton,
 .submitComment,
-.addReviewButton {
+.addReviewButton,
+.editButton,
+.deleteButton {
   margin-bottom: 20px;
   margin-top: 20px;
   font-size: 15px;
@@ -388,7 +467,9 @@ html {
 
 .returnButton:hover,
 .submitComment:hover,
-.addReviewButton:hover {
+.addReviewButton:hover,
+.editButton:hover,
+.deleteButton:hover {
   color: white;
   background-color: #00f764;
   -webkit-text-stroke-width: 1.5px;
@@ -398,11 +479,17 @@ html {
 
 .returnButton:active,
 .submitComment:active,
-.addReviewButton:active {
+.addReviewButton:active,
+.editButton:active,
+.deleteButton:active {
   transform: scale(1);
 }
 
 /* comment section */
+
+/* .editButton,
+.deleteButton {
+} */
 
 .commentSection {
   display: flex;
