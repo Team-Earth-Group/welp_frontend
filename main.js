@@ -308,7 +308,7 @@ loginForm.addEventListener('submit', async (event) => {
 //search
 searchBarForm.addEventListener('submit', async (event) => {
     event.preventDefault()
-    const keyword = event.target.keyword.value
+    const keyword = event.target.elements[0].value
     const location = event.target.location.value
     const response = await axios.get(`${url}/businesses?keyword=${keyword}&location=${location}`)
     const businesses = response.data.businesses
