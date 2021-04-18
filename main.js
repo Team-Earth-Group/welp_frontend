@@ -177,7 +177,7 @@ const addBusiness = (business) => {
         const addCommentBtnDiv = document.createElement('div')
         addCommentBtnDiv.classList.add('addReview')
         const addCommentBtn = document.createElement('button')
-        addCommentBtn.innerText = 'Add Comment'
+        addCommentBtn.innerText = 'Leave a Review'
         addCommentBtn.classList.add('addReviewButton')
         addCommentBtnDiv.append(addCommentBtn)
 
@@ -201,6 +201,7 @@ const addBusiness = (business) => {
             ratingComment.appendChild(option);
         }
         const submitComment = document.createElement('button')
+        submitComment.classList.add('submitComment')
         submitComment.innerText = "Submit"
 
         divComment.append(inputComment)
