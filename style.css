@@ -26,10 +26,26 @@ html {
   background-attachment: fixed;
   overflow: auto;
 }
-.leftNav {
+
+.loggedInNav {
+  display: flex;
+  width: 90%;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.leftSide {
   display: flex;
   width: 90%;
   justify-content: flex-start;
+  margin-top: 25px;
+}
+
+.rightSide {
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
   margin-top: 25px;
 }
 
@@ -383,6 +399,25 @@ html {
     0px 2px 2px 0px rgb(7 232 238 / 14%), 0px 1px 5px 0px rgb(7 232 238 / 12%);
 }
 
+/* all business page */
+
+.showAllBusinesses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: fit-content;
+  align-items: center;
+  background-color: #ffeb2b;
+  margin-top: 50px;
+  border: solid black 2px;
+  border-radius: 5px;
+  padding: 20px;
+  width: 350px;
+  margin-bottom: 100px;
+  box-shadow: 0px 3px 1px -2px rgb(7 232 238 / 20%),
+    0px 2px 2px 0px rgb(7 232 238 / 14%), 0px 1px 5px 0px rgb(7 232 238 / 12%);
+}
+
 /* business page */
 
 .businessPage {
@@ -471,7 +506,4 @@ html {
 
 .inputComment {
   margin-bottom: 50px;
-}
-
-.addBusinessForm {
 }

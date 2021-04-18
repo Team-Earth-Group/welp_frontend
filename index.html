@@ -20,28 +20,34 @@
       <div class="body">
         <div class="home">
           <!-- hide these buttons when on landing page -->
-          <div class="leftNav">
-            <div class="lists">
-              <button class="addBusinessButton" type="submit">
-                <span>
-                  <a>Add</a>
-                </span>
-              </button>
-              <button class="showBusinessButton" type="submit">
-                <span>
-                  <a>Show All</a>
-                </span>
-              </button>
+          <div class="loggedInNav hidden">
+            <div class="leftSide">
+              <div class="lists">
+                <button class="addBusinessButton" type="submit">
+                  <span>
+                    <a>Add</a>
+                  </span>
+                </button>
+                <button class="showBusinessButton" type="submit">
+                  <span>
+                    <a>Show All</a>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="rightSide">
+              <div class="logoutNav">
+                <button class="logoutButton" type="submit">
+                  <span>
+                    <a>Logout</a>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
           <!-- hide these buttons when logged in -->
-          <div class="homeNav hidden">
+          <div class="homeNav">
             <div class="navButtons">
-              <button class="logoutButton hidden" type="submit">
-                <span>
-                  <a>Logout</a>
-                </span>
-              </button>
               <button class="loginButton" type="submit">
                 <span>
                   <a>Login</a>
@@ -151,6 +157,8 @@
             </div>
           </div>
           <div class="searchResultContainer hidden"></div>
+          <!-- show all businesses is dynamic and will hold any number of business -->
+          <div class="showAllBusinesses hidden"></div>
 
           <div class="addBusinessForm hidden">
             <form class="registerForm" autocomplete="off">
