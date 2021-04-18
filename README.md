@@ -50,7 +50,7 @@ Welp is an application similar to --REDACTED--, where a business can add their s
 
 ​
 
-<!-- insert mvp here -->
+<!-- please insert mvp here -->
 
 ​
 
