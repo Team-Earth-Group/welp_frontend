@@ -7,7 +7,6 @@ const replaceInFile = require('replace-in-file')
 app.use(require('cors')())
 
 const rootDir = path.join(__dirname, '/')
-app.use(express.static(rootDir))
 
 app.get('/', (req, res) => {
   const filepath = path.join(__dirname, 'index.html')
@@ -25,6 +24,8 @@ app.use(async (req, res, next) => {
   }
   next()
 })
+
+app.use(express.static(rootDir))
 
 
 app.get('/style.css', (req, res) => {
