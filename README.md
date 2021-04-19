@@ -48,9 +48,12 @@ Welp is an application similar to --REDACTED--, where a business can add their s
 
 ## MVP goals
 
-​
-
-<!-- please insert mvp here -->
+- User authentication
+- Allow the user to create a new account
+- View all businesses 
+- List user businesses when logged in
+- Ability to create a new business
+- Allow the user to add a review to a business when logged in
 
 ​
 
