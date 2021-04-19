@@ -4,6 +4,7 @@ const app = express()
 const routesReport = require('rowdy-logger').begin(app)
 const path = require('path')
 const replaceInFile = require('replace-in-file')
+app.use(require('cors')())
 
 const rootDir = path.join(__dirname, '/')
 app.use(express.static(rootDir))
