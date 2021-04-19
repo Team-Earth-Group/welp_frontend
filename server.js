@@ -14,17 +14,16 @@ app.get('/', (req, res) => {
   res.sendFile(filepath)
 })
 
-app.get('/main.js', async (req, res) => {
+app.use(async (req, res, next) => {
   const filepath = path.join(__dirname, 'main.js')
-
   if (process.env.NODE_ENV === 'production') {
     await replaceInFile({
       files: filepath,
       from: 'http://localhost:3001',
-      to: 'https://earth-team-welp-backend.herokuapp.com/'
+      to: 'https://earth-team-welp-backend.herokuapp.com'
     })
   }
-  res.sendFile(filepath)
+  next()
 })
 
 
